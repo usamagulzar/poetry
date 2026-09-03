@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const mehrNastaliq = localFont({
+  src: "../../public/fonts/Mehr_Nastaliq_Web.ttf",
+  variable: "--font-mehr-nastaliq",
+  display: "block",
+});
 
 export const metadata: Metadata = {
   title: "The Poet | Portfolio",
@@ -13,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ur" dir="rtl" className="h-full">
-      <body className="h-full w-full overflow-hidden flex flex-col bg-[var(--background)]" suppressHydrationWarning>
+      <body className={`h-full w-full overflow-hidden flex flex-col bg-[var(--background)] ${mehrNastaliq.variable}`} suppressHydrationWarning>
         <div className="flex-1 w-full flex flex-col pb-2 min-h-0">
           {children}
         </div>
